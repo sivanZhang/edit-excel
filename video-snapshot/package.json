@@ -17,6 +17,7 @@
     "sass-loader": "^8.0.0",
     "timers": "^0.1.1",
     "video-capture": "^1.0.2",
+    "videojs": "^1.0.0",
     "vue": "^2.6.10",
     "xlsx": "^0.15.1"
   },

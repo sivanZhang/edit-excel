@@ -68,12 +68,14 @@ import iconIncrease from "./icons/icon-increase.png";
 import iconLower from "./icons/icon-lower.png";
 import iconFullscreen from "./icons/icon-fullscreen.png";
 import iconMark from "./icons/icon-mark.png";
+import { Loading } from "element-ui";
 import ImageDraw from "@/components/ImageDraw";
 import { constants } from "crypto";
 
 export default {
   components: { ImageDraw },
   name: "VideoPlayer",
+  
   props: {
     url: {
       type: String,
@@ -117,61 +119,51 @@ export default {
   created() {},
   mounted() {
     this.initVideo();
-    this.keyup();
     //this.videoPlayerNoVideoIsShow=false;
-
+    this.handelKeyDown()
     this.width = document.getElementById("playerBox").offsetWidth;
     this.height = document.getElementById("playerBox").offsetHeight;
   },
   methods: {
-    cancelP() {
-      document.addEventListener(
-        "keydown",
-        function(e) {
-          e.returnValue = true;
-        },
-        false
-      );
+    stopHandel() {
+      window.removeEventListener("keydown", this.keyDownCallback, false);
     },
-    keyup() {
-      var _self = this;
+    handelKeyDown() {
+      window.addEventListener("keydown", this.keyDownCallback, false);
+    },
+    keyDownCallback(event) {
       let frameTime = 1 / 25;
-      document.addEventListener(
-        "keydown",
-        function(event) {
-          let e = event || window.event || arguments.callee.caller.arguments[0];
-          if (_self.videoPlayerIsShow) {
+      var _self = this;
+      let e = event || window.event || arguments.callee.caller.arguments[0];
+      if (_self.videoPlayerIsShow) {
+        _self.playerControls.stateIcon = "el-icon-video-play";
+        if (e && e.keyCode === 37) {
+          //left arrow
+          _self.videoPlayer.pause();
+          _self.videoPlayer.currentTime(
+            Math.max(0, _self.videoPlayer.currentTime() - frameTime)
+          );
+        } else if (e && e.keyCode === 39) {
+          //right arrow
+          _self.videoPlayer.pause();
+          _self.videoPlayer.currentTime(
+            Math.min(
+              _self.videoPlayer.duration(),
+              _self.videoPlayer.currentTime() + frameTime
+            )
+          );
+        } else if (e && e.keyCode === 32) {
+          e.preventDefault();
+          if (_self.videoPlayer.paused()) {
+            _self.videoPlayer.play();
+            _self.playerControls.stateIcon = "el-icon-video-pause";
+            _self.playerStepInterval();
+          } else {
+            _self.videoPlayer.pause();
             _self.playerControls.stateIcon = "el-icon-video-play";
-            if (e && e.keyCode === 37) {
-              //left arrow
-              _self.videoPlayer.pause();
-              _self.videoPlayer.currentTime(
-                Math.max(0, _self.videoPlayer.currentTime() - frameTime)
-              );
-            } else if (e && e.keyCode === 39) {
-              //right arrow
-              _self.videoPlayer.pause();
-              _self.videoPlayer.currentTime(
-                Math.min(
-                  _self.videoPlayer.duration(),
-                  _self.videoPlayer.currentTime() + frameTime
-                )
-              );
-            } else if (e && e.keyCode === 32) {
-              e.preventDefault();
-              if (_self.videoPlayer.paused()) {
-                _self.videoPlayer.play();
-                _self.playerControls.stateIcon = "el-icon-video-pause";
-                _self.playerStepInterval();
-              } else {
-                _self.videoPlayer.pause();
-                _self.playerControls.stateIcon = "el-icon-video-play";
-              }
-            }
           }
-        },
-        false
-      );
+        }
+      }
     },
     /**
      * 加载视频资源
@@ -194,7 +186,6 @@ export default {
       }, 1000);
     },
     initNextVideo(index, videoProjects) {
-      //this.initNextVideoUrl=videoProject;
       this.currentProjectIndex = index;
       this.projectLists = videoProjects;
     },
@@ -203,7 +194,6 @@ export default {
      */
     initVideo() {
       var _self = this;
-
       this.videoPlayer = videojs(
         myVideo,
         {
@@ -285,6 +275,7 @@ export default {
     changeVolume: function(type) {
       if (this.videoPlayerIsShow) {
         this.videoPlayer.muted(false);
+        console.log(this.playerVolume);
         if ("add" == type) {
           if (this.playerVolume < 1) {
             this.playerVolume += 0.1;
@@ -347,7 +338,7 @@ export default {
         currentFrame: this.calcFrame(this.videoPlayer.currentTime()),
         imgUrl: drawImage,
         currentPosition: this.videoPlayer.currentTime(),
-        currentProject: this.currentProject//选中
+        currentProject: this.currentProject //选中
       };
       this.$emit("getCutImg", obj);
       this.videoPlayerIsShow = true;
@@ -466,7 +457,7 @@ export default {
     }
     .slider {
       margin: 0 10px;
-      width:68%;
+      width: 68%;
       color: #fff;
     }
   }

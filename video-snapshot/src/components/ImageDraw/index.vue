@@ -2,29 +2,29 @@
   <div class="draw-context" id="drawContext" v-show="drawContextDisplay">
     <div id="drawToolbar">
       <el-button class="icon-btn" title="画笔工具" @click="changeCanvasMode('pencel')">
-        <svg-icon icon-class="icon-pencel" />
+        <img src="./icons/icon-pencel.svg" />
       </el-button>
       <el-button class="icon-btn" title="椭圆工具" @click="changeCanvasMode('circle')">
-        <svg-icon icon-class="icon-circle" />
+        <img src="./icons/icon-circle.svg" />
       </el-button>
       <el-button class="icon-btn" title="矩形工具" @click="changeCanvasMode('rec')">
-        <svg-icon icon-class="icon-rec" />
+        <img src="./icons/icon-rec.svg" />
       </el-button>
       <el-button class="icon-btn" title="文字工具" @click="changeCanvasMode('text')">
-        <svg-icon icon-class="icon-text" />
+        <img src="./icons/icon-text.svg" />
       </el-button>
       <el-button class="icon-btn" title="箭头工具" @click="changeCanvasMode('arrowhead')">
-        <svg-icon icon-class="icon-arrowhead" />
+        <img src="./icons/icon-arrowhead.svg" />
       </el-button>
       <el-color-picker v-model="lineColor" title="颜色选择器"></el-color-picker>
       <el-button class="icon-btn" title="撤销" @click="undoDrawImage">
-        <svg-icon icon-class="icon-undo" />
+        <img src="./icons/icon-undo.svg" />
       </el-button>
       <el-button class="icon-btn" title="完成" @click="saveDrawImage">
-        <svg-icon icon-class="icon-complete" />
+        <img src="./icons/icon-complete.svg" />
       </el-button>
       <el-button class="icon-btn" title="取消" @click="exitDrawImage">
-        <svg-icon icon-class="icon-cancel" />
+        <img src="./icons/icon-cancel.svg" />
       </el-button>
     </div>
     <canvas
@@ -452,11 +452,13 @@ export default {
     background: #ddd;
     border: 0;
     border-bottom: 1px solid #ddd;
-    font-size: 25px;
     padding: 5px;
     margin-top: 10px;
     display: block;
     margin: 12px auto;
+    img{
+      height: 20px;
+    }
   }
   .icon-btn:first-child {
     margin-top: 60px;
