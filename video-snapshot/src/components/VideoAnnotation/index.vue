@@ -1,7 +1,7 @@
 <template>
   <div id="video-check">
     <el-row class="page" :gutter="15">
-      <el-col :span="19" class="page-left" style="height:850px;">
+      <el-col :span="24" class="page-left" style="height:850px;">
         <div class="video-player" style="height：550px;">
           <!-- 播放器 -->
           <video-player
@@ -13,7 +13,7 @@
         </div>
         <div class="video-list">
           <!-- 视频列表 -->
-          <video-list ref="videoList" @initSource="initSource" :play-list="[{id:1,name:'test1',url:'ge.mp4'},{id:2,name:'test2',url:'47HK2MpfKwqx1510325093.mp4'}]"></video-list>
+          <video-list ref="videoList" @initSource="initSource" :play-list="playList"></video-list>
         </div>
       </el-col>
       <el-col :span="8" class="page-right">
@@ -49,19 +49,26 @@
 
 <script>
 import VideoPlayer from "../VideoPlayer";
-import VideoList from "../videoList";
+import VideoList from "../VideoList";
 export default {
   components: { VideoPlayer, VideoList },
+  props: {
+    playList: {
+      type: Array,
+      required: true
+    },
+    imgList: {
+      type: Array,
+      default: ()=>[]
+    }
+  },
   data() {
     return {
-      imgList: [], //  视频截图列表
-      activeTab: "first",
       currentVideoIsEdit: false,
       pWidth: 0,
       pHeight: 0,
       submitList: [],
-      currentId: null,
-      out_path:null
+      currentId: null
     };
   },
   mounted() {
@@ -73,8 +80,6 @@ export default {
   methods: {
     //点击播放列表回传  projectLists播放列表   index 当前点击的item 下标
     initSource(projectList, index, projectLists) {
-      console.log(...arguments);
-      
       this.currentId = projectList[0].id;
       this.submitList = [...projectLists];
       if (this.currentVideoIsEdit) {
@@ -197,20 +202,6 @@ export default {
           color: #f56c6c;
           margin-left: 10px;
         }
-      }
-    }
-
-    .btn-group {
-      margin-top: 10px;
-      overflow: hidden;
-
-      .fr {
-        float: right;
-      }
-
-      .btn {
-        padding: 6px 10px;
-        font-size: 12px;
       }
     }
   }

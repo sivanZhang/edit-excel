@@ -41,7 +41,6 @@
 </template>
 
 <script>
-import { Loading } from "element-ui";
 import "canvas-arrow";
 
 export default {
@@ -126,7 +125,6 @@ export default {
           imageH
         );
       };
-      console.log(this.context);
       this.context.lineWidth = this.lineWidth;
       this.context.strokeStyle = this.lineColor;
     },
