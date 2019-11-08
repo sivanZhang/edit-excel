@@ -180,16 +180,16 @@ export default {
       //原始数据= [[],[],[],[]]
       const dealDatas = data.datas;
       //绑定字段= {}
-      this.allKeysMap = { ...data.requiredKeysMap, ...data.keysMap };
+      this.allKeysMap = { ...data.requiredKeys, ...data.notRequiredKeys };
       this.keysMap = [
         {
           label: "必填字段",
-          options: Object.keys(data.requiredKeysMap),
-          obj: { ...data.requiredKeysMap }
+          options: Object.keys(data.requiredKeys),
+          obj: { ...data.requiredKeys }
         },
         {
           label: "非必填字段",
-          options: Object.keys(data.keysMap)
+          options: Object.keys(data.notRequiredKeys)
         }
       ];
 
