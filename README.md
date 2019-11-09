@@ -1,12 +1,8 @@
 # vue-admin-template
 
-> 这是一个极简的 vue admin 管理后台。它只包含了 Element UI & axios & iconfont & permission control & lint，这些搭建后台必要的东西。
+> 这是一个用表格形式编辑导入后的excel数据的组件，可以实现纯前端导入excel,在表格中编辑导入的数据，删除行列，在表头绑定字段，上传编辑后的表格。
 
 [线上地址](http://panjiachen.github.io/vue-admin-template)
-
-[国内访问](https://panjiachen.gitee.io/vue-admin-template)
-
-目前版本为 `v4.0+` 基于 `vue-cli` 进行构建，若你想使用旧版本，可以切换分支到[tag/3.11.0](https://github.com/PanJiaChen/vue-admin-template/tree/tag/3.11.0)，它不依赖 `vue-cli`。
 
 ## Extra
 
@@ -40,40 +36,12 @@ cd 项目目录
 # 安装依赖
 npm install
 
-# 建议不要直接使用 cnpm 安装以来，会有各种诡异的 bug。可以通过如下操作解决 npm 下载速度慢的问题
-npm install --registry=https://registry.npm.taobao.org
-
 # 启动服务
-npm run dev
+npm run serve
 ```
 
 浏览器访问 [http://localhost:9528](http://localhost:9528)
 
-## 发布
-
-```bash
-# 构建测试环境
-npm run build:stage
-
-# 构建生产环境
-npm run build:prod
-```
-
-## 其它
-
-```bash
-# 预览发布环境效果
-npm run preview
-
-# 预览发布环境效果 + 静态资源分析
-npm run preview -- --report
-
-# 代码格式检查
-npm run lint
-
-# 代码格式检查并自动修复
-npm run lint -- --fix
-```
 
 更多信息请参考 [使用文档](https://panjiachen.github.io/vue-element-admin-site/zh/)
 
@@ -81,7 +49,7 @@ npm run lint -- --fix
 
 ![demo](https://github.com/PanJiaChen/PanJiaChen.github.io/blob/master/images/demo.gif)
 
-##  Attribute
+###  Attribute
 
 
 | 属性名 | 说明 | 类型 | 默认值 |
@@ -92,7 +60,7 @@ npm run lint -- --fix
 
 
 
-##  Events
+###  Events
 
 
 | 事件名称 | 说明 | 回调参数 |
