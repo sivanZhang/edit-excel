@@ -22,19 +22,6 @@
           >
             <p class="pro-name">{{item.name}}</p>
           </el-checkbox>
-          <div style="margin-top:5px">
-            <el-image
-              :src="item.image"
-              fit="cover"
-            >
-              <div
-                slot="error"
-                style="height: 100%;display: flex;justify-content: center;align-items: center;font-size: 56px;background: #dcdfe6;"
-              >
-                <i class="el-icon-picture" style="color:#909399"></i>
-              </div>
-            </el-image>
-          </div>
         </div>
       </div>
     </el-checkbox-group>
@@ -52,7 +39,7 @@ export default {
   },
   props: {
     PlayList: {
-      type: Array,
+      type: Array
     }
   },
   created() {},
@@ -137,11 +124,7 @@ export default {
       border: 1px dotted #ddd;
       margin: 0 0.5%;
       background: #fff;
-      padding: 10px;
-      .el-image {
-        width: 100%;
-        height: 90px;
-      }
+      padding: 0 10px;
     }
   }
 }

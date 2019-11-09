@@ -16,33 +16,6 @@
           <video-list ref="videoList" @initSource="initSource" :play-list="playList"></video-list>
         </div>
       </el-col>
-      <el-col :span="8" class="page-right">
-        <div id="videoTabs" class="video-tabs">
-          <div class="mark-cont">
-            <div class="mark-form">
-              <ul class="img-list" v-if="imgList.length > 0">
-                <li class="img-item" v-for="(item,index) in imgList" :key="index">
-                  <el-image
-                    :src="item.imgUrl"
-                    :preview-src-list="ImageList(imgList)"
-                    fit="cover"
-                    style="height:45px;width:80px;"
-                  ></el-image>
-                  <div>
-                    <span>{{item.currentProject.name}} (第{{item.currentFrame}}帧)</span>
-                    <el-button
-                      type="text"
-                      class="del-btn"
-                      icon="el-icon-delete-solid"
-                      @click="delMarkImage(item,index)"
-                    ></el-button>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </el-col>
     </el-row>
   </div>
 </template>
@@ -56,10 +29,6 @@ export default {
     playList: {
       type: Array,
       required: true
-    },
-    imgList: {
-      type: Array,
-      default: ()=>[]
     }
   },
   data() {
@@ -94,15 +63,8 @@ export default {
       }
     },
     getMarkImage(obj) {
-      this.imgList.push(obj);
+      this.$emit("get-image-list", obj);
       let bH = document.body.offsetHeight;
-    },
-    delMarkImage(data, index) {
-      this.imgList.splice(index, 1);
-      let bH = document.body.offsetHeight;
-    },
-    ImageList(imgList) {
-      return imgList.map(t => t.imgUrl);
     },
     //传递 获取视频是否属于编辑中
     getCurrentVideoMode(mode) {
@@ -161,47 +123,6 @@ export default {
         width: 100%;
         margin-top: 1%;
         background: #fff;
-      }
-    }
-    .page-right {
-      height: 100%;
-      margin-left: 0.5%;
-      .video-info,
-      .video-tabs,
-      .video-comment {
-        @include scrollStyle;
-      }
-    }
-  }
-}
-
-.mark-cont {
-  width: 100%;
-
-  .mark-form {
-    .img-list {
-      @include scrollStyle;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      max-height: 195px;
-      overflow-y: scroll;
-      margin-bottom: 5px;
-
-      .img-item {
-        margin: 6px 0;
-        height: 62px;
-        background: #eee;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 8px;
-
-        .del-btn {
-          font-size: 18px;
-          color: #f56c6c;
-          margin-left: 10px;
-        }
       }
     }
   }

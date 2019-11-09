@@ -115,7 +115,6 @@ export default {
       this.imgStack.length = 0;
       this.img.src = this.imageBase64;
       this.img.onload = () => {
-        console.log("图片加载完毕", _self.img.width + "," + _self.img.height);
         let imageH = (_self.width-50)*9/16
         _self.context.drawImage(
           _self.img,
@@ -300,16 +299,10 @@ export default {
     drawText(text, x, y) {
       console.log(text);
       var _self = this;
-      // _self.context.putImageData(_self.beginRec.imageData, 0, 0)
-      // _self.context.save()
-      // _self.context.beginPath();
       _self.context.textAlign = "stleft art";
       _self.context.font = "italic small-caps bold 14px arial";
       _self.context.fillStyle = _self.lineColor;
       _self.context.fillText(text, x, y);
-      //_self.context.closePath();
-      // _self.context.stroke()
-      //_self.context.save()
     },
     // 绘制椭圆
     drawEllipse(context, x, y, a, b) {
