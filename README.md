@@ -2,8 +2,8 @@
 
 > 这是一个用表格形式编辑导入后的excel数据的组件，可以实现纯前端导入excel,在表格中编辑导入的数据，删除行列，在表头绑定字段，上传编辑后的表格数据。
 
-
-
+## 视频预览
+[![Watch the video](https://zjwvedio.oss-cn-beijing.aliyuncs.com/22.png)](https://zjwvedio.oss-cn-beijing.aliyuncs.com/vbz.mp4)
 ## 使用说明
    使用时直接把[本git项目](https://github.com/sivanZhang/edit-excel)中components文件夹下的edit-excel文件夹复制到需要引用的项目中，然后inport使用：
 
