@@ -81,12 +81,16 @@ npm run lint -- --fix
 
 ![demo](https://github.com/PanJiaChen/PanJiaChen.github.io/blob/master/images/demo.gif)
 
-## Browsers support
+##  Attribute
 
-Modern browsers and Internet Explorer 10+.
 
 | 属性名 | 说明 | 类型 | 默认值 |
 | --------- | --------- | --------- | --------- |
-| required-keys| 必填字段，如果在表格编辑期间未绑定所有必填字段则无法通过提交验证| Object| —|
-| --------- | --------- | --------- | --------- |
+| required-keys| 必填字段，如果在表格编辑期间未绑定所有必填字段则无法通过提交验证| Object| — |
 | not-required-keys | 非必填字段 | Object | {} |
+##  Events
+
+
+| 事件名称 | 说明 | 回调参数 |
+| --------- | --------- | --------- | 
+| submit-table| 点击组件中“上传”按钮的回调参数| submitTable：编辑完后的表格数据|
