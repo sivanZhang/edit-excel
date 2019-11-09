@@ -6,14 +6,18 @@
 
 ## 使用说明
    使用时直接把[本git项目](http://panjiachen.github.io/vue-admin-template)中components文件夹下的edit-excel文件夹复制到需要引用的项目中，然后inport使用：
-    ```html
-     <EditExcel
+
+
+template:
+```html
+<EditExcel
       :required-keys="requiredKeys"
       :not-required-keys="notRequiredKeys"
       @submit-table="submitTable"
     />
-     ```
-   ```js
+```
+js:
+```js
 <script>
 import EditExcel from "@/components/edit-excel";
 export default {
