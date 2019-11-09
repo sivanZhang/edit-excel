@@ -5,7 +5,7 @@
 
 
 ## 使用说明
-   使用时直接把[本git项目](http://panjiachen.github.io/vue-admin-template)中components文件夹下的edit-excel文件夹复制到需要引用的项目中，然后inport使用：
+   使用时直接把[本git项目](https://github.com/sivanZhang/edit-excel)中components文件夹下的edit-excel文件夹复制到需要引用的项目中，然后inport使用：
 
 
 template:
@@ -27,12 +27,12 @@ export default {
   data() {
     return {
       requiredKeys: {
-        //必填字段
+        //规定必须在上传表格时绑定的字段
         name: "用户名",
         email: "邮箱"
       },
       notRequiredKeys: {
-        //非必填字段
+        //规定在上传表格时绑定的可选字段
         phone: "手机号码",
         dept: "部门",
         isactive: "是否使用"
@@ -40,26 +40,28 @@ export default {
     };
   },
   methods: {
+   /**
+     * 点击“上传”按钮后出发
+     *
+     * @param {Object} data 返回当前表格数据
+     *
+     */
     submitTable(data) {
-      this.$notify({
-        title: "提交服务器的数据为：",
-        message: data,
-        duration: 0,
-        type: "warning"
-      });
+      //upload代码...
     }
   }
 };
 </script>
 ```
-# DEMO    
+# DEMO
+> 本项目可下载到本地，作为demo参考。
 ## Demo结构
 
 ``` bash
 │ 
-├── App.vue    # 引入了edit-excel下面组件，并在该页面有使用demo
+├── App.vue    # 引入了edit-excel组件，并在该页面有使用demo
 └── components
-    └── edit-excel    # edit-excel组件封装
+    └── edit-excel    # 封装edit-excel组件文件夹
 ```
 ## 启动demo项目
 
