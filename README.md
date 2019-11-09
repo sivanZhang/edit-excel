@@ -1,6 +1,7 @@
 # edit-excel
 
 > 这是一个用表格形式编辑导入后的excel数据的组件，可以实现纯前端导入excel,在表格中编辑导入的数据，删除行列，在表头绑定字段，上传编辑后的表格数据。
+## 在线访问
 [在线访问](http://www.chidict.com/demos/table/)
 ## 视频预览
 [![Watch the video](https://zjwvedio.oss-cn-beijing.aliyuncs.com/22.png)](https://zjwvedio.oss-cn-beijing.aliyuncs.com/vbz.mp4)
