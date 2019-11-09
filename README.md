@@ -88,9 +88,13 @@ npm run lint -- --fix
 | --------- | --------- | --------- | --------- |
 | required-keys| 必填字段，如果在表格编辑期间未绑定所有必填字段则无法通过提交验证| Object| — |
 | not-required-keys | 非必填字段 | Object | {} |
+| uploadLoading | “上传”按钮的loading状态 | Boolean | false |
+
+
+
 ##  Events
 
 
 | 事件名称 | 说明 | 回调参数 |
 | --------- | --------- | --------- | 
-| submit-table| 点击组件中“上传”按钮的回调参数| submitTable：编辑完后的表格数据|
+| submit-table| 点击组件中“上传”按钮触发| submitTable：编辑完后的表格数据|
