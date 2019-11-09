@@ -67,7 +67,7 @@ export default {
 
 ```bash
 # 克隆项目
-git clone 项目git地址
+git clone https://github.com/sivanZhang/edit-excel.git
 
 # 进入项目目录
 cd 项目目录
@@ -87,7 +87,7 @@ npm run serve
 
 | 属性名 | 说明 | 类型 | 默认值 |
 | --------- | --------- | --------- | --------- |
-| required-keys| 必填字段，如果在表格编辑期间未绑定所有必填字段则无法通过提交验证| Object| — |
+| required-keys| 上传表格时必填字段，如果在表格编辑期间未绑定所有必填字段则无法通过提交验证| Object| — |
 | not-required-keys | 非必填字段 | Object | {} |
 | uploadLoading | “上传”按钮的loading状态 | Boolean | false |
 
