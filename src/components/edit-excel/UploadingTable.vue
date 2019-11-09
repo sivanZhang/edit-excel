@@ -56,6 +56,7 @@ export default {
     },
     notRequiredKeys: {
       type: Object,
+      default:()=>{}
     },
     uploadLoading:{
         type:Boolean,

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <UploadingTable
+    <EditExcel
       :required-keys="requiredKeys"
       :not-required-keys="notRequiredKeys"
       @submit-table="submitTable"
@@ -8,10 +8,10 @@
   </div>
 </template>
 <script>
-import UploadingTable from "./components/UploadingTable";
+import EditExcel from "@/components/edit-excel";
 export default {
   components: {
-    UploadingTable
+    EditExcel
   },
   data() {
     return {
