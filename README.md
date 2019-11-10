@@ -1,9 +1,9 @@
 # edit-excel
 
 > 这是一个用表格形式编辑导入后的excel数据的组件，可以实现纯前端导入excel,在表格中编辑导入的数据，删除行列，在表头绑定字段，上传编辑后的表格数据。
-## 在线demo
+### 在线demo
 [在线访问](http://www.chidict.com/demos/table/)
-## 使用说明
+### 使用说明
    使用时直接把[本git项目](https://github.com/sivanZhang/edit-excel)中components文件夹下的edit-excel文件夹复制到需要引用的项目中，然后inport使用：
 
 
@@ -54,7 +54,7 @@ export default {
 ```
 # DEMO
 > 本项目可下载到本地，作为demo参考。
-Demo结构
+### 项目结构
 
 ``` bash
 │ 
@@ -62,11 +62,11 @@ Demo结构
 └── components
     └── edit-excel    # 封装edit-excel组件文件夹
 ```
-启动demo项目
+### 启动项目
 
 ```bash
 # 克隆项目
-git clone https://github.com/sivanZhang/edit-excel.git
+`git clone https://github.com/sivanZhang/edit-excel.git`
 
 # 进入项目目录
 cd 项目目录
@@ -77,13 +77,12 @@ npm install
 # 启动服务
 npm run serve
 ```
-视频预览
+### 视频预览
 [![Watch the video](https://zjwvedio.oss-cn-beijing.aliyuncs.com/22.png)](https://zjwvedio.oss-cn-beijing.aliyuncs.com/vbz.mp4)
 
 # 组件说明
 
-Attribute
-
+### Attribute
 
 | 属性名 | 说明 | 类型 | 默认值 |
 | --------- | --------- | --------- | --------- |
@@ -93,8 +92,7 @@ Attribute
 
 
 
-Events
-
+### Events
 
 | 事件名称 | 说明 | 回调参数 |
 | --------- | --------- | --------- | 
