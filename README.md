@@ -55,7 +55,7 @@ export default {
 # DEMO
 > 本项目可下载到本地，作为demo参考。
 ### 项目结构
-
+**目录 (Table of Contents)**
 ``` bash
 │ 
 ├── App.vue    # 引入了edit-excel组件，并在该页面有使用demo
@@ -66,20 +66,17 @@ export default {
 
 ```bash
 # 克隆项目
-```
-`git clone https://github.com/sivanZhang/edit-excel.git`
-```bash
+git clone https://github.com/sivanZhang/edit-excel.git
+
 # 进入项目目录
-```
-`cd 项目目录`
-```bash
+cd 项目目录
+
 # 安装依赖
-```
-`npm install`
-```bash
+npm install
+
 # 启动服务
+npm run serve
 ```
-`npm run serve`
 ### 视频预览
 [![Watch the video](https://zjwvedio.oss-cn-beijing.aliyuncs.com/22.png)](https://zjwvedio.oss-cn-beijing.aliyuncs.com/vbz.mp4)
 
