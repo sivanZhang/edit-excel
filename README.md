@@ -2,7 +2,7 @@
 
 > 这是一个用excel批量上传并且编辑数据的组件，可以实现纯前端导入excel不限制excel格式,在表格中编辑导入的数据、删除行列，在表头绑定自定义字段，上传编辑后的表格数据。
 
-**[在线demo](https://www.chidict.com/demos/table/)**
+[在线访问](https://www.chidict.com/demos/table/)
 ### 使用说明
    使用时直接把[本git项目](https://github.com/sivanZhang/edit-excel)中components文件夹下的edit-excel文件夹复制到需要引用的项目中，然后inport使用：
 
